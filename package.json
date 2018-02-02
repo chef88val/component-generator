@@ -1,0 +1,15 @@
+{
+  "name": "component-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "run",
+    "test": "test"
+  },
+  "author": "Javier Segarra",
+  "license": "ISC",
+  "devDependencies": {
+    "yargs": "^9.0.1"
+  }
+}
