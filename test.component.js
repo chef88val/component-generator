@@ -16,11 +16,11 @@ angular.module('testC', []).directive('testComponent', function () {
         }
     }
 })
-function testComponentController(title, subtitle, $scope, Restangular, notificationService, utilsService) {
+function testComponentController($scope, Restangular, notificationService, utilsService) {
 
     var vm = this;
      vm.Test = {};
-    vm.Test.title = title
-    vm.Test.subtitle = subtitle
+    vm.Test.title = $scope.title
+    vm.Test.subtitle = $scope.subtitle
 
 } 

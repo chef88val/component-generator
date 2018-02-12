@@ -30,10 +30,11 @@ function readHTML(params) {
 }
 
 function writeFile(params) {
-    console.log("wr")
+    var route = require('./.componentGenerator.json').route
+    console.log(route,"wr",route + params)
     let mkdir = false;
     try {
-        fs.mkdirSync(params);
+        fs.mkdirSync(route+params);
         process.chdir('./' + params)
     } catch (error) {
         if (error.code !== 'EEXIST') throw error
@@ -45,7 +46,7 @@ function writeFile(params) {
         fs.readFile('../test.component.' + x, 'utf8', function (err, data) {
             console.log(__dirname,"DDD")
             if (err) throw err;
-            let result = data.replace(/test/g, params).replace(/vmTest/g, 'vm'+params.charAt(0).toUpperCase() + params.slice(1));
+            let result = data.replace(/test/g, params).replace(/Test/g, params).replace(/vmTest/g, 'vm'+params.charAt(0).toUpperCase() + params.slice(1));
  
              fs.writeFileSync(params + '.component.' + x, result, 'utf8', function (err) {
                 if (err) throw err;
